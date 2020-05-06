@@ -1,0 +1,25 @@
+<site-layout>
+  <@title>FVP App</@title>
+  <@content>
+    <section>
+      <h2>Hello!</h2>
+      <p>
+        We're glad you've decided to try out Marko. You're looking at the result of
+        <code>~/src/index.marko</code>. Try editing that file and this page will reload. &#9889;
+      </p>
+      <app-hello name=data.name/>
+      You have ${data.count} new messages!
+
+      <if(data.colors && data.colors.length)>
+        <ul>
+          <for|i, color| in=data.colors>
+            <li style=`color: ${color}`>${color}</li>
+          </for>
+        </ul>
+      </if>
+      <else>
+        <div>No colors!</div>
+      </else>
+    </section>
+  </@content>
+</site-layout>
