@@ -25,7 +25,7 @@ function build () {
   // fastify.register(require('./views/routes'))
 
   fastify.get('/', async (req, reply) => {
-    reply.view('/views/routes/01-home/index.marko', {
+    return reply.view('/views/routes/01-home/index.marko', {
       name: 'Fedor',
       count: 30,
       colors: ['red', 'green', 'blue']
