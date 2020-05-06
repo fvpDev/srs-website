@@ -24,21 +24,15 @@ function build () {
   // Register Page Routes
   // fastify.register(require('./views/routes'))
   fastify.get('/', async (req, res) => {
-    const { name = 'World' } = req.query
+    const { name = 'World1' } = req.query
     req.log.info({ name }, 'hello world!')
     return `Hello ${name}!`
   })
 
-  fastify.get('/home', async (req, res) => {
-    return res
-  })
-
-  fastify.get('/home2', async (req, res) => {
-    return res.view('/views/routes/01-home/index.marko', {
-      name: 'Fedor',
-      count: 30,
-      colors: ['red', 'green', 'blue']
-    })
+  fastify.get('/hello', async (req, res) => {
+    const { name = 'World2' } = req.query
+    req.log.info({ name }, 'hello world!')
+    return `Hello ${name}!`
   })
 
   return fastify
