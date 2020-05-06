@@ -1,1 +1,0 @@
-$_mod.run("/fvp-app$0.0.1/views/components/app-hello/index.marko.register");

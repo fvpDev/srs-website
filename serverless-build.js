@@ -17,6 +17,11 @@ function build () {
 
   // Register Page Routes
   // fastify.register(require('./views/routes'))
+  fastify.get('/', async (req, res) => {
+    const { name = 'World' } = req.query
+    req.log.info({ name }, 'hello world!')
+    return `Hello ${name}!`
+  })
 
   return fastify
 }

@@ -1,1 +1,0 @@
-$_mod.run("/fvp-app$1.0.0/index.marko.init");
