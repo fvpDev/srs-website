@@ -1,9 +1,15 @@
 'use strict'
 
 function build () {
+  require('marko/node-require');
+
+  const path = require('path')
   const fastify = require('fastify')({
     logger: true
   })
+
+  const isProduction = process.env.NODE_ENV === 'production'
+  const outputDir = path.join(__dirname, 'static')
 
   // Register View Engine
   fastify.register(require('point-of-view'), {
@@ -21,6 +27,14 @@ function build () {
     const { name = 'World' } = req.query
     req.log.info({ name }, 'hello world!')
     return `Hello ${name}!`
+  })
+
+  fastify.get('/home', async (req, reply) => {
+    reply.view('/views/routes/01-home/index.marko', {
+      name: 'Fedor',
+      count: 30,
+      colors: ['red', 'green', 'blue']
+    })
   })
 
   return fastify
