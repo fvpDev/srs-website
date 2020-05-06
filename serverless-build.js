@@ -16,7 +16,7 @@ function build () {
   // fastify.register(require('./services/api/routes'))
 
   // Register Page Routes
-  fastify.register(require('./views/routes'))
+  // fastify.register(require('./views/routes'))
 
   return fastify
 }
