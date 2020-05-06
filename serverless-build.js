@@ -29,8 +29,12 @@ function build () {
     return `Hello ${name}!`
   })
 
-  fastify.get('/home', async (req, reply) => {
-    return reply.view('/views/routes/01-home/index.marko', {
+  fastify.get('/home', async (req, res) => {
+    return res
+  })
+
+  fastify.get('/home2', async (req, res) => {
+    return res.view('/views/routes/01-home/index.marko', {
       name: 'Fedor',
       count: 30,
       colors: ['red', 'green', 'blue']
