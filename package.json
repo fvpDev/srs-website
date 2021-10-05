@@ -29,7 +29,7 @@
     "fastify-autoload": "^1.2.2",
     "fastify-cli": "^1.5.0",
     "fastify-plugin": "^1.6.1",
-    "fastify-static": "^2.7.0",
+    "fastify-static": "^4.2.4",
     "lasso": "^3.3.1",
     "lasso-marko": "^2.4.9",
     "marko": "^4.21.7",
